@@ -1,0 +1,16 @@
+config system settings
+    set sip-helper disable
+    set sip-nat-trace disable
+    set default-voip-alg-mode kernel-helper-based
+end
+#verificar o comando abaixo antes de rodar daqui pra baixo
+config system session-helper
+    delete 13
+end
+
+config voip profile
+    edit "default"
+            config sip
+                set rtp disable
+            end
+end
