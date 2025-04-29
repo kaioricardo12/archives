@@ -1,0 +1,49 @@
+#script de configuracao de usuários padrão.
+#Alterado em 28/11/2022
+#Inserido novo rbbackup
+
+config system accprofile
+    edit "cert_admin"
+        set sysgrp custom
+        set vpngrp read-write
+        config sysgrp-permission
+            set cfg read-write
+        end
+    next
+end
+
+config system admin
+    edit "rbroot"
+        set accprofile "super_admin"
+        set vdom "root"
+        #
+        #use um gerador de senhas 45 caracteres com dois espaços em branco.
+        #Inclua #@! como caracteres especiais
+        #coloque a senha entre aspas duplas
+        #set password "0dfEzmQVceVEoo5Tx  n55rjvcCzQ2XIZwSBo"
+        set password "0dfEzmQVceVEoo5Tx  n55rjvcCzQ2XIZwSBo"
+    next
+    edit "cloudroot"
+        set accprofile "super_admin"
+        set vdom "root"
+        #
+        #use um gerador de senhas 45 caracteres com dois espaços em branco.
+        #Inclua #@! como caracteres especiais
+        #coloque a senha entre aspas duplas
+        #set password "0dfEzmQVceVEoo5Tx  n55rjvcCzQ2XIZwSBo"
+        set password "0dfEzmQVceVEoo5Tx  n55rjvcCzQ2XIZwSBo"
+    next
+    #NAO ALTERAR DAQUI PARA BAIXO
+    edit "certmgr"
+        set accprofile "cert_admin"
+        set vdom "root"
+        set ssh-public-key1 "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAgo06A81H2cEWFOSTolDBxnN30Bs6thhjbG5yf3HvpS536WZgSKPPWVOt8V2Gv3SvhMht1IAxXZkH432Knju+nQr622BmW2E85jG+hbCgLCvtNoq6ZQ71V242M+/IpKC2whqlc/YD2EpWfCknsUci2N07tzHjkUmXDQReSjHk2TZ+oumjaa1yqDaWRYKyunwKC33sLiL82TtzWZSZnemD+pAW/xZOEvPJnOpNAlnwXt0EewM5Dxv6aheEwzm+9Ho/2apgznjTNszyiy1YR7/6CvbTO1QLnzY1hx3tOgbXJa1yVKPeG6LZTTGZwKcxMySUrF6hAHXAjlOxdA0uyWQ9yxM7hQph26JyEQt+ryyxJv59BFKJJ0hxAim10ku5C66tOcZPJ/OGyyY/viRawXQxPrxN1sAgDHGukET0HPTYe2wkGqyq1wYBWzjZbmUw66OuH3k1v5LdMLmsYoKy4A+QtxvF/TTVxbGENv9lp4vtsJJHmw1LtiAcpz4A+Ue14yT8XctFfjua/3gw2sSeGqaeQA4tcLspde3MhwS3n7CZrmRHPftQn0aSbzFkZSgrmJVll5iVO8CLA19WP5UU8HoZ/3PlC0fAVleHhUGJWdgUA63JTnjYylcJIgwMuPHMiQXyxN2zUSMhLqTy/6dy33bxWe6XwjK1txbOs6K4kQAMqw8= certmgr"
+        set password ENC 7tOoAMZN8cEzxCzQTksoURRenfBHRvr79UFWnSZbw64ahrug30ZndURUlLIHG8KCVBRfgZ=
+    next
+    edit "rbbackup"
+        set accprofile "super_admin"
+        set vdom "root"
+        set ssh-public-key1 "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHrEVNeoZwkb0SzFD27Al769aCDClmUKZwoFDek3xGOuUs/oHalsWBkLwvqb/7V8UcLQ/yPutn8g3koCF4/gHfT4H2V6Z/0+b/CEi/1I7tGZkNKWWHfpgN5s4XKsAmZwsgB1D2uMhSM3crCXHp3BMSzxiYPfC2SyPbPv6Q18GBlukTC+xrGltjaxXVcBg6pRdc96298fTzTDMqphdV0BjGi56cWSJ6hOV9b0/3PtXUbKWKDywtu4ScBV8GDxs6aZnnTub11mfGBy+rXzKmtQqvPZFV13pDiCQ65pi25e9lU9uSF5q8OiYoNoOxln7fZiKvMyW5NsHGEC0b0af5/MweGhVCmgqhiZJxtGill5ylVOyfh5TAKV1sFrWvZxY1r1474CCd3xsb7B0NnfWQ/0CO1LubC8wJMX32flPIqN9XlgQFzznVr89Ror2Pvbf5uoVBPbQhnwECe7x2X68priDzoz0njF1UHGgJ3BtDBhFsc/cuGsmzQs+9U/Az+Kdrekbq6Im1FbFgYojscWMcjB+GCuUhrGvyLqH00gell0TPzd+twWXA2bdcO4sP/XQIcRDyOPYC7hnygrzfAefGyHAOFMuaqehwbwNC8uhxDufzpnuSw99Njv5jy5pSlzc7io0V0ALeZGo+DDhVSnHqibNfjJEBey6VbYvrVWNu1p+DbQ== rbbackup"
+        set password ENC 7tOoAbw64ahrugKCVBRfgZMZN8cEzxCzQTksbw64ahrug30ZndURUlLIHG8KCVBRfgZoURRenfBHRvr79UFWnSZbw64ahrug30ZndURUlLIHG8KCVBRfgZ=
+    next
+end
