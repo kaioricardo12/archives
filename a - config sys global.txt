@@ -1,0 +1,18 @@
+#Script de configuracoes globais
+#Alterado em 27/01/2024
+
+config system global
+    set admin-https-redirect disable
+    set admin-scp enable
+    set admin-sport 34433
+    set admin-ssh-port 34434
+    set admintimeout 30
+    set dst disable
+    set gui-certificates enable
+    set gui-theme onyx
+    set timezone 18
+    set admin-https-ssl-versions tlsv1-2
+    set tcp-option disable
+    set revision-image-auto-backup enable
+    set revision-backup-on-logout enable
+end
